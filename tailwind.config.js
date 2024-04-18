@@ -17,7 +17,6 @@ module.exports = {
         'storm': '#00008c',
       },
       fontFamily: {
-        'gochi': ['"Gochi Hand"', ...defaultTheme.fontFamily.serif],
         'bebas': ["Bebas Neue", ...defaultTheme.fontFamily.serif]    
       }
     },
