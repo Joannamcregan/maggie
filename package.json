@@ -1,15 +1,21 @@
 {
-  "name": "maggie",
+  "name": "custom-ebook-marketplace",
   "version": "1.0.0",
-  "description": "'a personal site for Maggie'",
-  "main": "main.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "wp-scripts start src/main.js"
+    "watch-bs": "npm-run --parallel sync start",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start src/index.js",
+    "dev": "wp-scripts start",
+    "devFast": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "'Joanna'",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.4.3"
+  "dependencies": {
+    "@wordpress/scripts": "*",
+    "normalize.css": "^8.0.1"
   }
 }
