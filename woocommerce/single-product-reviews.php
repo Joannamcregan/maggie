@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 global $product, $wpdb;
 $comments_table = $wpdb->prefix .  "comments";
+$meta_table = $wpdb->prefix . "commentmeta";
 $post = get_the_ID();
 
 ?><div class="single-product-review-section">
@@ -42,12 +43,16 @@ $post = get_the_ID();
                 ?>
             </h2>
 
-            <?php $comments = $wpdb->get_results("SELECT comment_author, comment_content, comment_date from $comments_table WHERE comment_post_ID = $post AND comment_type = 'review';"); ?>
+            <?php $comments = $wpdb->get_results("SELECT c.comment_author, c.comment_content, m.meta_value as rating, month(c.comment_date) as comment_month, day(c.comment_date) as comment_day, year(c.comment_date) as comment_year from $comments_table c JOIN $meta_table m ON c.comment_id = m.comment_id AND m.meta_key = 'rating' WHERE comment_post_ID = $post AND comment_type = 'review';"); ?>
             <?php if ($comments) : ?>
                 <?php foreach($comments as $comment): ?>
                     <div class="tomc-product-single-review">
+                        <p class="<?php echo 'tomc-product-single-review-stars-' . $comment->rating; ?>"><?php echo '(' . $comment->rating . '/5)'; ?></p>
                         <p style="white-space: pre-line">
-                            <?php echo $comment->comment_content; ?>
+                            <?php echo '"' . $comment->comment_content . '"'; ?>
+                        </p>
+                        <p class="right-text">
+                            <?php echo '-' . $comment->comment_author . ' (' . $comment->comment_month . '/' . $comment->comment_day . '/' . $comment->comment_year . ')'; ?>
                         </p>
                     </div>
                 <?php endforeach; ?>
