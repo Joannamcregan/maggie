@@ -3,3 +3,11 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@layer base {
+    @font-face {
+      font-family: Bebas Neue;
+      font-weight: 400;
+      src: url(/fonts/bebas.woff2) format("woff2");
+    }
+  }
