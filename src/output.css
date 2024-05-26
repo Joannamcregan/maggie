@@ -451,7 +451,7 @@ video {
 
   font-weight: 400;
 
-  src: url(/fonts/bebas.woff2) format("woff2");
+  src: url(../fonts/bebas.woff2) format("woff2");
 }
 
 *, ::before, ::after {
