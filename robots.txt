@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /fonts/
+Disallow: /src/
+
+Sitemap: https://www.maggiecregan.com/sitemap.xml
