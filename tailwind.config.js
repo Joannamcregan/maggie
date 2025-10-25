@@ -17,6 +17,8 @@ module.exports = {
         'storm': '#00008c',
         'darkBlue': '#0d112e',
         'lightBlue': '#2e4d8d',
+        'lightGray': '#fdfffd',
+        'darkGray': '#101919',
       },
       fontFamily: {
         'bebas': ["Bebas Neue", ...defaultTheme.fontFamily.serif]    
