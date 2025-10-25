@@ -15,6 +15,8 @@ module.exports = {
         'tangerine': '#ff9500',
         'magenta': '#8b1c3f',
         'storm': '#00008c',
+        'darkBlue': '#0d112e',
+        'lightBlue': '#2e4d8d',
       },
       fontFamily: {
         'bebas': ["Bebas Neue", ...defaultTheme.fontFamily.serif]    
